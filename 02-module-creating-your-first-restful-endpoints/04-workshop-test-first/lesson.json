@@ -1,0 +1,12 @@
+{
+  "id": "spring-brasb-first-rest-endpoints-test-first-workshop",
+  "slug": "test-first-lab",
+  "title": "Lab: Testing First",
+  "status": "live",
+  "type": "lab",
+  "duration": 600,
+  "settings": {
+    "educates": "spr-brasb-test-first",
+    "manualCompletion": true
+  }
+}

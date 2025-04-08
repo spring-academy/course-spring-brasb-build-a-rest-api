@@ -1,0 +1,12 @@
+{
+  "id": "spring-brasb-rounding-out-crud-implementing-put-workshop",
+  "slug": "implementing-put-lab",
+  "title": "Lab: Implementing PUT",
+  "status": "live",
+  "type": "lab",
+  "duration": 1200,
+  "settings": {
+    "educates": "spr-brasb-implementing-put",
+    "manualCompletion": true
+  }
+}

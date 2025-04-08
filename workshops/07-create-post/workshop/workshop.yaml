@@ -1,0 +1,11 @@
+name: Implementing POST
+modules:
+  activate:
+    - 01-test-endpoint
+    - 02-add-endpoint
+    - 03-test-semantics
+    - 04-implement-endpoint
+    - 05-understand-save
+    - 06-understand-all
+    - 07-test-and-learn
+    - 08-summary

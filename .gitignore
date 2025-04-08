@@ -1,0 +1,21 @@
+# IDEs
+.idea
+
+##
+*.swp
+.DS_Store
+.bash_history
+.cache
+.config
+.docker
+.envrc
+.gitconfig
+.kube
+.lesshst
+.local
+.ssh
+.theia
+.webdav
+.yarn
+.envrc
+.vscode

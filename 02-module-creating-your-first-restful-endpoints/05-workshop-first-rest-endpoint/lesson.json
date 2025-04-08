@@ -1,0 +1,12 @@
+{
+  "id": "spring-brasb-first-rest-endpoints-first-rest-endpoint-workshop",
+  "slug": "first-rest-endpoint-lab",
+  "title": "Lab: Implementing GET",
+  "status": "live",
+  "type": "lab",
+  "duration": 1500,
+  "settings": {
+    "educates": "spr-brasb-first-rest-endpoint",
+    "manualCompletion": true
+  }
+}

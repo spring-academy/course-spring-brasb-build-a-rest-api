@@ -1,0 +1,31 @@
+{
+  "id": "spring-brasb",
+  "slug": "building-a-rest-api-with-spring-boot",
+  "title": "Building a REST API with Spring Boot",
+  "status": "live",
+  "order": 100,
+  "level": "beginner",
+  "topics": [
+    "java",
+    "rest",
+    "database",
+    "testing",
+    "deployment",
+    "observability",
+    "security"
+  ],
+  "instructors": [
+    "spring-joe-moore",
+    "spring-carlton-schuyler",
+    "spring-josh-long"
+  ],
+  "entitlements": ["auth"],
+  "settings": {
+    "thumbnail": "https://raw.githubusercontent.com/spring-academy/spring-academy-assets/main/courses/course-spring-brasb-build-a-rest-api/course-brasb-thumbnail-large.png",
+    "debug.version": "${GITHUB_REF_NAME}",
+    "debug.commit": "${GITHUB_SHA}",
+    "debug.updated": "${DEBUG_DATE}",
+    "debug.who": "${GITHUB_ACTOR}",
+    "debug.github-workflow": "${GITHUB_WORKFLOW}"
+  }
+}

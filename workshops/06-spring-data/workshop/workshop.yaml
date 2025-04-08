@@ -1,0 +1,11 @@
+name: Repositories & Spring Data
+modules:
+  activate:
+    - 01-changes
+    - 02-review
+    - 03-dependencies
+    - 04-create-repo
+    - 05-inject-repo
+    - 06-use-repo
+    - 07-configure-database
+    - 08-summary

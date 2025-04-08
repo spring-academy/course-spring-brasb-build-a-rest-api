@@ -1,0 +1,12 @@
+{
+  "id": "spring-brasb-rounding-out-crud-implementing-delete-workshop",
+  "slug": "implementing-delete-lab",
+  "title": "Lab: Implementing DELETE",
+  "status": "live",
+  "type": "lab",
+  "duration": 900,
+  "settings": {
+    "educates": "spr-brasb-implementing-delete",
+    "manualCompletion": true
+  }
+}

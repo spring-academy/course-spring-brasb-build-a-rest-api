@@ -1,0 +1,12 @@
+{
+  "id": "spring-brasb-secure-app-get-list-workshop",
+  "slug": "get-list-lab",
+  "title": "Lab: Returning a list with GET",
+  "status": "live",
+  "type": "lab",
+  "duration": 1800,
+  "settings": {
+    "educates": "spr-brasb-get-list",
+    "manualCompletion": true
+  }
+}

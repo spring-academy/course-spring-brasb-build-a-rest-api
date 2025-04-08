@@ -1,0 +1,29 @@
+{
+  "id": "spring-brasb-first-rest-endpoints-data-contracts",
+  "slug": "data-contracts",
+  "title": "API Contracts & JSON",
+  "status": "live",
+  "type": "article",
+  "duration": 300,
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "JSON",
+        "url": "https://www.json.org/"
+      },
+      {
+        "text": "YAML",
+        "url": "https://yaml.org/"
+      },
+      {
+        "text": "XML",
+        "url": "https://www.w3.org/standards/xml/core#:~:text=What%20is%20XML%3F,more%20suitable%20for%20Web%20use"
+      },
+      {
+        "text": "Consumer-Driven Data Contracts",
+        "url": "https://tanzu.vmware.com/developer/guides/consumer-driven-contracts/"
+      }
+    ]
+  }
+}

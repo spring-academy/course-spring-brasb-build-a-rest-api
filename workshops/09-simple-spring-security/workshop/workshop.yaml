@@ -1,0 +1,15 @@
+name: Lesson
+modules:
+  activate:
+    - 01-requirements
+    - 02-review
+    - 03-add-dependency
+    - 04-spring-security-start
+    - 05-configure-basic-auth
+    - 06-test-basic-auth
+    - 07-authorization
+    - 08-ownership-repo
+    - 09-ownership-controller
+    - 10-ownership-create
+    - 11-csrf
+    - 12-summary

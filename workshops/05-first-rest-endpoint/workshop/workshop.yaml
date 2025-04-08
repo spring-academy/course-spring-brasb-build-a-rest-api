@@ -1,0 +1,9 @@
+name: Implementing GET
+modules:
+  activate:
+    - 01-test-get-endpoint
+    - 02-create-controller
+    - 03-add-get-endpoint
+    - 04-complete-get-endpoint
+    - 05-use-path-variable
+    - 06-summary

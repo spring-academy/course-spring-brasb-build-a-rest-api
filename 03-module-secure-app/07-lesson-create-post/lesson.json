@@ -1,0 +1,21 @@
+{
+  "id": "spring-brasb-secure-app-create-post",
+  "slug": "implementing-post",
+  "title": "Implementing POST",
+  "status": "live",
+  "type": "article",
+  "duration": 900,
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "Yagni: You Ain't Gonna Need It",
+        "url": "https://martinfowler.com/bliki/Yagni.html"
+      },
+      {
+        "text": "HTTP Idempotent Methods",
+        "url": "https://www.rfc-editor.org/rfc/rfc9110#section-9.2.2"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "spring-brasb-first-rest-endpoints-spring-data",
+  "slug": "spring-data",
+  "title": "Repositories & Spring Data",
+  "status": "live",
+  "type": "article",
+  "duration": 600,
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "Spring Data",
+        "url": "https://spring.io/projects/spring-data"
+      },
+      {
+        "text": "Relational Databases",
+        "url": "https://en.wikipedia.org/wiki/Relational_database"
+      },
+      {
+        "text": "H2 Database Engine",
+        "url": "https://www.h2database.com/html/main.html"
+      }
+    ]
+  }
+}

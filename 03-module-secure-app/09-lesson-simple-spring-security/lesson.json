@@ -1,0 +1,37 @@
+{
+  "id": "spring-brasb-secure-app-simple-spring-security",
+  "slug": "simple-spring-security",
+  "title": "Simple Spring Security",
+  "status": "live",
+  "type": "article",
+  "duration": 1800,
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "Spring Security",
+        "url": "https://spring.io/projects/spring-security"
+      },
+      {
+        "text": "Spring support for Cross-Origin Resource Sharing",
+        "url": "https://docs.spring.io/spring-framework/docs/current/reference/html/web.html#mvc-cors"
+      },
+      {
+        "text": "Same Origin Policy",
+        "url": "https://en.wikipedia.org/wiki/Same-origin_policy"
+      },
+      {
+        "text": "Role-Based Access Control",
+        "url": "https://en.wikipedia.org/wiki/Role-based_access_control"
+      },
+      {
+        "text": "Cross-Origin Request Forgery",
+        "url": "https://en.wikipedia.org/wiki/Cross-site_request_forgery"
+      },
+      {
+        "text": "Cross-Site Scripting",
+        "url": "https://en.wikipedia.org/wiki/Cross-site_scripting"
+      }
+    ]
+  }
+}

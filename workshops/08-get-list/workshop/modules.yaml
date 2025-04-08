@@ -1,0 +1,28 @@
+modules:
+  01-changes:
+    name: Changes from the Previous Lab
+    exit_sign: Continue
+  02-new-data-contract:
+    name: Testing the New Data Contract
+    exit_sign: Continue
+  03-test-get-endpoint:
+    name: Test for an Additional GET Endpoint
+    exit_sign: Continue
+  04-enhance-list-test:
+    name: Enhance the List Test
+    exit_sign: Continue
+  05-test-interaction:
+    name: "Test Interaction and @DirtiesContext"
+    exit_sign: Continue
+  06-pagination:
+    name: Pagination
+    exit_sign: Continue
+  07-sorting:
+    name: Sorting
+    exit_sign: Continue
+  08-paging-and-sorting-defaults:
+    name: Paging and Sorting defaults
+    exit_sign: Continue
+  09-summary:
+    name: Summary
+    exit_sign: Finish

@@ -1,0 +1,9 @@
+name: Lesson
+modules:
+  activate:
+    - 01-overview
+    - 02-write-the-test
+    - 03-implement-putmapping
+    - 04-test-security
+    - 05-refactor
+    - 10-summary

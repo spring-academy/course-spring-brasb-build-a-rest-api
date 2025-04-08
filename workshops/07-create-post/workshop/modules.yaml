@@ -1,0 +1,25 @@
+modules:
+  01-test-endpoint:
+    name: Test the HTTP POST Endpoint
+    exit_sign: Continue
+  02-add-endpoint:
+    name: Add the POST endpoint
+    exit_sign: Continue
+  03-test-semantics:
+    name: Testing based on semantic correctness
+    exit_sign: Continue
+  04-implement-endpoint:
+    name: Implement the POST Endpoint
+    exit_sign: Continue
+  05-understand-save:
+    name: Understand CrudRepository.save
+    exit_sign: Continue
+  06-understand-all:
+    name: Understand the other changes to CashCardController
+    exit_sign: Continue
+  07-test-and-learn:
+    name: Final Testing and Learning Moment
+    exit_sign: Continue
+  08-summary:
+    name: Summary
+    exit_sign: Finish

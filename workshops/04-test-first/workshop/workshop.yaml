@@ -1,0 +1,6 @@
+name: Testing First
+modules:
+  activate:
+    - 01-write-your-first-test
+    - 02-test-the-data-contract
+    - 03-test-deserialization

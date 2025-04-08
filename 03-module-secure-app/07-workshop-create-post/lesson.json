@@ -1,0 +1,12 @@
+{
+  "id": "spring-brasb-secure-app-create-post-workshop",
+  "slug": "create-post-lab",
+  "title": "Lab: Implementing POST",
+  "status": "live",
+  "type": "lab",
+  "duration": 1500,
+  "settings": {
+    "educates": "spr-brasb-create-post",
+    "manualCompletion": true
+  }
+}

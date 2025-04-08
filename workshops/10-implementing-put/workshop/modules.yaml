@@ -1,0 +1,19 @@
+modules:
+  01-overview:
+    name: Overview
+    exit_sign: Continue
+  02-write-the-test:
+    name: Write the Test First
+    exit_sign: Continue
+  03-implement-putmapping:
+    name: "Implement @PutMapping in the Controller"
+    exit_sign: Continue
+  04-test-security:
+    name: "Additional Testing and Spring Security's Influence"
+    exit_sign: Continue
+  05-refactor:
+    name: "Refactor the Controller Code"
+    exit_sign: Continue
+  10-summary:
+    name: Summary
+    exit_sign: Finish

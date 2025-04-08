@@ -1,0 +1,21 @@
+{
+  "id": "spring-brasb-rounding-out-crud-implementing-put",
+  "slug": "implementing-put",
+  "title": "Implementing PUT",
+  "status": "live",
+  "type": "article",
+  "duration": 600,
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "HTTP POST and PUT",
+        "url": "https://www.rfc-editor.org/rfc/rfc9110#name-post"
+      },
+      {
+        "text": "HTTP PATCH",
+        "url": "https://www.rfc-editor.org/rfc/rfc5789"
+      }
+    ]
+  }
+}

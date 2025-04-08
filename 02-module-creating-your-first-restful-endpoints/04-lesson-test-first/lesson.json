@@ -1,0 +1,17 @@
+{
+  "id": "spring-brasb-first-rest-endpoints-test-first",
+  "slug": "test-first",
+  "title": "Testing First",
+  "status": "live",
+  "type": "article",
+  "duration": 300,
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "Learn how TDD allows teams to go fast “forever”",
+        "url": "https://tanzu.vmware.com/developer/learningpaths/application-development/test-driven-development/#describe-how-tdd-allows-teams-to-go-fast-forever"
+      }
+    ]
+  }
+}

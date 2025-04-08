@@ -1,0 +1,1 @@
+In this lab you learned how simple it is to add another endpoint to our API -- the `POST` endpoint. You also learned how to use that endpoint to create and save a new `CashCard` to our database using Spring Data. Not only that, but the endpoint accurately implements the HTTP POST specification, which we verified using test driven development. The API is starting to be useful!

@@ -1,0 +1,11 @@
+name: Lesson
+modules:
+  activate:
+    - 01-overview
+    - 02-test-happy-path
+    - 03-implement-delete
+    - 04-doesnt-exist
+    - 05-enforce-ownership
+    - 06-refactor
+    - 07-hide-unauthorized
+    - 08-summary

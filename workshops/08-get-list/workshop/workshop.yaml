@@ -1,0 +1,12 @@
+name: Lesson
+modules:
+  activate:
+    - 01-changes
+    - 02-new-data-contract
+    - 03-test-get-endpoint
+    - 04-enhance-list-test
+    - 05-test-interaction
+    - 06-pagination
+    - 07-sorting
+    - 08-paging-and-sorting-defaults
+    - 09-summary

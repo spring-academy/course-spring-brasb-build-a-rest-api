@@ -1,0 +1,21 @@
+{
+  "id": "spring-brasb-first-rest-endpoints-first-endpoint",
+  "slug": "implementing-get",
+  "title": "Implementing GET",
+  "status": "live",
+  "type": "article",
+  "duration": 600,
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "The HTTP Standard",
+        "url": "https://www.rfc-editor.org/rfc/rfc9110#section-9"
+      },
+      {
+        "text": "Spring Beans",
+        "url": "https://docs.spring.io/spring-framework/docs/current/reference/html/core.html#beans-introduction"
+      }
+    ]
+  }
+}

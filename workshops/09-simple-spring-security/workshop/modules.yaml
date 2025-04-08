@@ -1,0 +1,37 @@
+modules:
+  01-requirements:
+    name: Understand our Security Requirements
+    exit_sign: Continue
+  02-review:
+    name: Review update from Previous Lab
+    exit_sign: Continue
+  03-add-dependency:
+    name: Add the Spring Security Dependency
+    exit_sign: Continue
+  04-spring-security-start:
+    name: Satisfy Spring Security's Dependencies
+    exit_sign: Continue
+  05-configure-basic-auth:
+    name: Configure Basic Authentication
+    exit_sign: Continue
+  06-test-basic-auth:
+    name: Testing Basic Authentication
+    exit_sign: Continue
+  07-authorization:
+    name: Support Authorization
+    exit_sign: Continue
+  08-ownership-repo:
+    name: "Cash Card ownership: Repository Updates"
+    exit_sign: Continue
+  09-ownership-controller:
+    name: "Cash Card ownership: Controller Updates"
+    exit_sign: Continue
+  10-ownership-create:
+    name: "Cash Card ownership: Creation Updates"
+    exit_sign: Continue
+  11-csrf:
+    name: About CSRF
+    exit_sign: Continue
+  12-summary:
+    name: Summary
+    exit_sign: Finish

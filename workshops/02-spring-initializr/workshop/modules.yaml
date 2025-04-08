@@ -1,0 +1,4 @@
+modules:
+  01-spring-initializr:
+    name: Spring Initializr
+    exit_sign: Finish

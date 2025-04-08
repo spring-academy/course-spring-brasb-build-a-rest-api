@@ -1,0 +1,19 @@
+modules:
+  01-test-get-endpoint:
+    name: "Write a Spring Boot Test for the GET endpoint"
+    exit_sign: Continue
+  02-create-controller:
+    name: "Create a REST Controller"
+    exit_sign: Continue
+  03-add-get-endpoint:
+    name: "Add the GET endpoint"
+    exit_sign: Continue
+  04-complete-get-endpoint:
+    name: "Complete the GET endpoint"
+    exit_sign: Continue
+  05-use-path-variable:
+    name: "Using the @PathVariable"
+    exit_sign: Continue
+  06-summary:
+    name: "Summary"
+    exit_sign: Finish

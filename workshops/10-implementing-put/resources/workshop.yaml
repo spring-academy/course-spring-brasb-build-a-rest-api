@@ -1,0 +1,57 @@
+apiVersion: training.educates.dev/v1beta1
+kind: Workshop
+metadata:
+  name: spr-brasb-implementing-put
+spec:
+  title: "Implementing PUT"
+  description: "Implementing PUT"
+  workshop:
+    image: jdk17-environment:*
+    packages:
+      - name: spring-academy-lab
+        files:
+          - image:
+              url:
+                ghcr.io/spring-academy/spring-academy-extension-packages/spring-academy-lab
+              tagSelection:
+                semver:
+                  constraints: ">=1.0.0 <2.0.0"
+    files:
+      - image: # Note: format is {REPOSITORY_NAME}-files
+          url: $(image_repository)/course-spring-brasb-build-a-rest-api-files:$(workshop_version)
+        includePaths:
+          - /workshops/10-implementing-put/workshop/**
+          - /workshops/10-implementing-put/exercises/**
+          - /workshops/10-implementing-put/README.md
+        newRootPath: workshops/10-implementing-put
+      - path: .local/share/code-server
+        image:
+          url: ghcr.io/spring-academy/vscode-java-tools-$(platform_arch)-files:0.25.14
+      - path: exercises
+        git:
+          url: https://github.com/spring-academy/course-spring-brasb-build-a-rest-api-code
+          ref: main
+        newRootPath: .
+  request:
+    parameters:
+    - name: USER_DOMAIN
+      value: "unknown.domain"
+    - name: USER_EMAIL
+      value: "somebody@unknown.domain"
+  session:
+    env:
+      - name: LESSON_LABEL
+        value: implement-put-start
+    namespaces:
+      budget: medium
+    applications:
+      terminal:
+        enabled: true
+        layout: default
+      editor:
+        enabled: true
+    dashboards:
+      - name: Editor
+      - name: Terminal
+    resources:
+      memory: 2Gi

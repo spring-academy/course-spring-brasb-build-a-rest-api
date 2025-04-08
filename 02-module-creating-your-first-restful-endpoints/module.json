@@ -1,0 +1,10 @@
+{
+  "id": "spring-brasb-first-rest-endpoints",
+  "slug": "creating-restful-endpoints",
+  "title": "Creating RESTful Endpoints",
+  "status": "live",
+  "duration": 60,
+  "settings": {
+    "manualCompletion": true
+  }
+}

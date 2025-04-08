@@ -1,0 +1,17 @@
+{
+  "id": "spring-brasb-rounding-out-crud-implementing-delete",
+  "slug": "implementing-delete",
+  "title": "Implementing DELETE",
+  "status": "live",
+  "type": "article",
+  "duration": 300,
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "HTTP DELETE",
+        "url": "https://developer.mozilla.org/en-US/docs/Web/HTTP/Methods/DELETE"
+      }
+    ]
+  }
+}

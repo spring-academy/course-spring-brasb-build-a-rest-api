@@ -1,0 +1,12 @@
+{
+  "id": "spring-brasb-first-rest-endpoints-spring-initializr-workshop",
+  "slug": "bootstrap-lab",
+  "title": "Lab: Spring Initializr",
+  "status": "live",
+  "type": "lab",
+  "duration": 300,
+  "settings": {
+    "educates": "spr-brasb-initializr",
+    "manualCompletion": true
+  }
+}

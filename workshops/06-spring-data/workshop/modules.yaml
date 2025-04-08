@@ -1,0 +1,25 @@
+modules:
+  01-changes:
+    name: Changes from Previous Workshops
+    exit_sign: Continue
+  02-review:
+    name: Review the Current Data Management Pattern
+    exit_sign: Continue
+  03-dependencies:
+    name: Add Spring Data Dependencies
+    exit_sign: Continue
+  04-create-repo:
+    name: Create the CashCardRepository
+    exit_sign: Continue
+  05-inject-repo:
+    name: Inject the CashCardRepository
+    exit_sign: Continue
+  06-use-repo:
+    name: Use the CashCardRepository for Data Management
+    exit_sign: Continue
+  07-configure-database:
+    name: Configure the Database
+    exit_sign: Continue
+  08-summary:
+    name: Summary
+    exit_sign: Finish

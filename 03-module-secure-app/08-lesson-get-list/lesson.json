@@ -1,0 +1,11 @@
+{
+  "id": "spring-brasb-secure-app-get-list",
+  "slug": "get-list",
+  "title": "Returning a list with GET",
+  "status": "live",
+  "type": "article",
+  "duration": 1800,
+  "settings": {
+    "manualCompletion": true
+  }
+}

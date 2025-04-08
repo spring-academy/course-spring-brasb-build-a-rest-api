@@ -1,0 +1,10 @@
+modules:
+  01-write-your-first-test:
+    name: Writing a Failing Test
+    exit_sign: Continue
+  02-test-the-data-contract:
+    name: Testing the Data Contract
+    exit_sign: Continue
+  03-test-deserialization:
+    name: Testing Deserialization
+    exit_sign: Finish

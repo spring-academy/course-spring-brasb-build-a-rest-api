@@ -1,0 +1,29 @@
+{
+  "id": "spring-brasb-first-rest-endpoints-spring-initializr",
+  "slug": "spring-boot",
+  "title": "Spring and Spring Boot",
+  "status": "live",
+  "type": "article",
+  "duration": 300,
+  "settings": {
+    "manualCompletion": true,
+    "links": [
+      {
+        "text": "Spring",
+        "url": "https://spring.io/"
+      },
+      {
+        "text": "Spring Boot",
+        "url": "https://spring.io/projects/spring-boot"
+      },
+      {
+        "text": "Spring IoC Container",
+        "url": "https://docs.spring.io/spring-framework/reference/core/beans.html"
+      },
+      {
+        "text": "Spring Initializr",
+        "url": "https://start.spring.io/"
+      }
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+modules:
+  01-overview:
+    name: "Overview"
+    exit_sign: Continue
+  02-test-happy-path:
+    name: "Test the Happy Path"
+    exit_sign: Continue
+  03-implement-delete:
+    name: "Implement the DELETE Endpoint"
+    exit_sign: Continue
+  04-doesnt-exist:
+    name: "Test case: The Cash Card doesn't exist"
+    exit_sign: Continue
+  05-enforce-ownership:
+    name: "Enforce Ownership"
+    exit_sign: Continue
+  06-refactor:
+    name: "Refactor"
+    exit_sign: Continue
+  07-hide-unauthorized:
+    name: "Hide Unauthorized Records"
+    exit_sign: Continue
+  08-summary:
+    name: "Summary"
+    exit_sign: Finish

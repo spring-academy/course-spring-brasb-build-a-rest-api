@@ -1,0 +1,4 @@
+name: Spring Initializr
+modules:
+  activate:
+    - 01-spring-initializr

@@ -1,0 +1,12 @@
+{
+  "id": "spring-brasb-secure-app-simple-spring-security-workshop",
+  "slug": "simple-spring-security-lab",
+  "title": "Lab: Simple Spring Security",
+  "status": "live",
+  "type": "lab",
+  "duration": 1800,
+  "settings": {
+    "educates": "spr-brasb-simple-security",
+    "manualCompletion": true
+  }
+}

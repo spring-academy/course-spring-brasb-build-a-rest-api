@@ -1,0 +1,58 @@
+apiVersion: training.educates.dev/v1beta1
+kind: TrainingPortal
+metadata:
+  name: spring-academy
+spec:
+  portal:
+    registration:
+      type: anonymous
+    updates:
+      workshop: true
+    sessions:
+      maximum: 15
+  workshops:
+    - name: spr-brasb-initializr
+      capacity: 1
+      expires: 60m
+      orphaned: 5m
+      reserved: 0
+    - name: spr-brasb-test-first
+      capacity: 1
+      expires: 60m
+      orphaned: 5m
+      reserved: 0
+    - name: spr-brasb-first-rest-endpoint
+      capacity: 1
+      expires: 60m
+      orphaned: 5m
+      reserved: 0
+    - name: spr-brasb-spring-data
+      capacity: 1
+      expires: 60m
+      orphaned: 5m
+      reserved: 0
+    - name: spr-brasb-create-post
+      capacity: 1
+      expires: 60m
+      orphaned: 5m
+      reserved: 0
+    - name: spr-brasb-get-list
+      capacity: 1
+      expires: 60m
+      orphaned: 5m
+      reserved: 0
+    - name: spr-brasb-simple-security
+      capacity: 1
+      expires: 90m
+      orphaned: 5m
+      reserved: 0
+    - name: spr-brasb-implementing-put
+      capacity: 1
+      expires: 60m
+      orphaned: 5m
+      reserved: 0
+    - name: spr-brasb-implementing-delete
+      capacity: 1
+      expires: 60m
+      orphaned: 5m
+      reserved: 0

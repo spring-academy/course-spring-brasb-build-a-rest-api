@@ -1,0 +1,12 @@
+{
+  "id": "spring-brasb-first-rest-endpoints-spring-data-workshop",
+  "slug": "spring-data-lab",
+  "title": "Lab: Repositories & Spring Data",
+  "status": "live",
+  "type": "lab",
+  "duration": 1200,
+  "settings": {
+    "educates": "spr-brasb-spring-data",
+    "manualCompletion": true
+  }
+}
