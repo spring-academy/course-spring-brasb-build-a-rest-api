@@ -1,7 +1,7 @@
 apiVersion: training.educates.dev/v1beta1
 kind: TrainingPortal
 metadata:
-  name: spring-academy
+  name: spring-brasb
 spec:
   portal:
     cookies:
@@ -18,8 +18,8 @@ spec:
         - https://spring-academy.broadcom.com
         - https://labs.spring.academy
         - https://*.labs.spring.academy
-        - https://strigo.spring.academy
-        - https://*.strigo.spring.academy
+        - https://spring-staging.academy
+        - https://*.spring-staging.academy
         - https://*.vmware.com
         - https://*.broadcom.com
     updates:
