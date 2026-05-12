@@ -1,0 +1,16 @@
+name: deploy-production
+run-name: Deploy ${{ github.ref_name }} to Production
+concurrency: deploy-production
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-workflow:
+    uses: ./.github/workflows/reusable-deploy.yaml
+    with:
+      version: ${{ github.ref_name }}
+      environment: prod
+    secrets:
+      penguictl_apiurl: ${{ secrets.PENGUINCTL_APIURL_PROD }}
+      penguictl_apitoken: ${{ secrets.PENGUINCTL_APITOKEN_PROD }}
