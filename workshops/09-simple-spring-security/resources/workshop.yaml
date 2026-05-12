@@ -54,4 +54,4 @@ spec:
       - name: Editor
       - name: Terminal
     resources:
-      memory: 2Gi
+      memory: 3Gi
