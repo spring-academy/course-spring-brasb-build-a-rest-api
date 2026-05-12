@@ -1,0 +1,42 @@
+name: deploy
+run-name: Deploy ${{ inputs.version }} to ${{ inputs.environment }}
+
+on:
+  workflow_call:
+    inputs:
+      version:
+        required: true
+        type: string
+      environment:
+        required: true
+        type: string
+    secrets:
+      penguictl_apiurl:
+        required: true
+      penguictl_apitoken:
+        required: true
+        
+
+jobs:
+  deployment:
+    name: Deploy to ${{ inputs.environment }}
+    environment: ${{ inputs.environment }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+      - name: Login to GitHub Package Registry
+        uses: docker/login-action@v3
+        with:
+          registry: ghcr.io
+          username: ${{ github.repository_owner }}
+          password: ${{ secrets.GITHUB_TOKEN }}
+      - name: Make Image for Environment
+        run: |
+          make deploy-lab version=${{ inputs.version }} environment=${{ inputs.environment }}
+      - name: Deploy to EMMIT
+        env:
+          PENGUINCTL_APIURL: ${{ secrets.penguictl_apiurl }}
+          PENGUINCTL_APITOKEN: ${{ secrets.penguictl_apitoken }}
+        run: |
+          make deploy-lms

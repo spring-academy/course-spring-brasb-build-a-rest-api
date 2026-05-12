@@ -1,0 +1,16 @@
+name: deploy-staging
+run-name: Deploy ${{ github.ref_name }} to Staging
+concurrency: deploy-staging
+
+on:
+  workflow_dispatch:
+
+jobs:
+  call-workflow:
+    uses: ./.github/workflows/reusable-deploy.yaml
+    with:
+      version: ${{ github.ref_name }}
+      environment: staging
+    secrets:
+      penguictl_apiurl: ${{ secrets.PENGUINCTL_APIURL_STAGING }}
+      penguictl_apitoken: ${{ secrets.PENGUINCTL_APITOKEN_STAGING }}

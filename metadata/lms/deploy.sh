@@ -5,7 +5,6 @@ set -o pipefail
 if [[ "${TRACE-0}" == "1" ]]; then set -o xtrace; fi
 
 DIR="$(dirname "$0")"
-REPO_DIR="$(realpath "${DIR}/../")"
 
 ci-utils() {
     if [[ "${PENGUIN_USEDOCKER:-true}" != "false" ]]; then
@@ -16,8 +15,8 @@ ci-utils() {
 }
 
 penguinctl-docker() {
-    echo "penguinctl version $(docker run --rm ghcr.io/spring-academy/penguinctl:latest --version)"
-    docker run --rm -v "$(pwd)":"$(pwd)" ghcr.io/spring-academy/penguinctl:latest --url="${PENGUINCTL_APIURL}" --token="${PENGUINCTL_APITOKEN}" $@
+    echo "penguinctl version $(docker run --rm ghcr.io/vmware-tanzu-learning/penguinctl:latest --version)"
+    docker run --rm -v "$(pwd)":"$(pwd)" ghcr.io/vmware-tanzu-learning/penguinctl:latest --url="${PENGUINCTL_APIURL}" --token="${PENGUINCTL_APITOKEN}" $@
 }
 
 penguinctl-local() {
@@ -42,9 +41,9 @@ deploy-all() {
     DEBUG_DATE=$(date)
     export DEBUG_DATE
 
-    envsubst < "${REPO_DIR}/course.template.json" > "${REPO_DIR}/course.json"
-    penguinctlcmd apply course -f "${REPO_DIR}/course.json"
-    rm "${REPO_DIR}/course.json"
+    envsubst < "${DIR}/course.template.json" > "${DIR}/course.json"
+    penguinctlcmd apply course -f "$(pwd)/${DIR}/course.json"
+    rm "${DIR}/course.json"
 }
 
 "$@"

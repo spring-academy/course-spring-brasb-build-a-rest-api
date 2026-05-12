@@ -1,0 +1,8 @@
+DIR_LAB               = lab
+NAME                  = course-spring-brasb-build-a-rest-api
+IMAGE_SOURCE          = https://github.com/spring-academy/course-spring-brasb-build-a-rest-api
+CONTAINER_REGISTRY    = 
+CONTAINER_REPOSITORY  = course-spring-brasb-build-a-rest-api
+version               = latest
+
+env                   = local
