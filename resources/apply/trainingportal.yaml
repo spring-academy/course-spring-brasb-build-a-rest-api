@@ -4,9 +4,6 @@ metadata:
   name: spring-brasb
 spec:
   portal:
-    cookies:
-      domain: spring.academy
-    index: https://spring.academy
     sessions:
       anonymous: 2
       maximum: 180
@@ -15,13 +12,14 @@ spec:
         ancestors:
         - https://spring.academy
         - https://*.spring.academy
-        - https://spring-academy.broadcom.com
-        - https://labs.spring.academy
-        - https://*.labs.spring.academy
-        - https://spring-staging.academy
-        - https://*.spring-staging.academy
         - https://*.vmware.com
         - https://*.broadcom.com
+        - https://spring-staging.academy
+        - https://spring-academy.broadcom.com
+        - https://spring-academy-verify.broadcom.com
+        - https://spring-academy-qa.broadcom.net
+        - https://spring-academy-dev.broadcom.net
+        - http://localhost:8080
     updates:
       workshop: true
     workshop:
