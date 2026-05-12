@@ -17,8 +17,9 @@ spec:
                 semver:
                   constraints: ">=1.0.0 <2.0.0"
     files:
-      - image: # Note: format is {REPOSITORY_NAME}-files
-          url: $(image_repository)/course-spring-brasb-build-a-rest-api-files:$(workshop_version)
+      - http:
+          # the name of the tar.gz here should make the workshop name
+          url: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)/spring-maisey.tar.gz"
         includePaths:
           - /workshops/06-spring-data/workshop/**
           - /workshops/06-spring-data/exercises/**
@@ -55,3 +56,60 @@ spec:
     dashboards:
       - name: Editor
       - name: Terminal
+  environment:
+    objects:
+    - apiVersion: v1
+      kind: Service
+      metadata:
+        name: $(workshop_namespace)-files
+        namespace: $(workshop_namespace)
+      spec:
+        type: ClusterIP
+        ports:
+        - port: 80
+          protocol: TCP
+          targetPort: 8080
+        selector:
+          deployment: files
+    - apiVersion: networking.k8s.io/v1
+      kind: Ingress
+      metadata:
+        name: $(workshop_namespace)-files
+        namespace: $(workshop_namespace)
+      spec:
+        tls:
+        - hosts:
+            - $(workshop_namespace)-files.$(ingress_domain)
+          secretName: $(ingress_secret)
+        rules:
+        - host: $(workshop_namespace)-files.$(ingress_domain)
+          http:
+            paths:
+            - backend:
+                service:
+                  name: $(workshop_namespace)-files
+                  port:
+                    number: 80
+              pathType: Prefix
+              path: /
+    - apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: $(workshop_namespace)-files
+        namespace: $(workshop_namespace)
+      spec:
+        serviceAccountName: $(service_account)
+        replicas: 1
+        selector:
+          matchLabels:
+            deployment: files
+        strategy:
+          type: Recreate
+        template:
+          metadata:
+            labels:
+              deployment: files
+          spec:
+            containers:
+            - name: files
+              image: ${CONTAINER_REGISTRY}${CONTAINER_REPOSITORY}:${VERSION}

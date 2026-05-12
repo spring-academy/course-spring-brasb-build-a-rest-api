@@ -4,55 +4,50 @@ metadata:
   name: spring-academy
 spec:
   portal:
-    registration:
-      type: anonymous
+    cookies:
+      domain: spring.academy
+    index: https://spring.academy
+    sessions:
+      anonymous: 2
+      maximum: 180
+    theme:
+      frame:
+        ancestors:
+        - https://spring.academy
+        - https://*.spring.academy
+        - https://spring-academy.broadcom.com
+        - https://labs.spring.academy
+        - https://*.labs.spring.academy
+        - https://strigo.spring.academy
+        - https://*.strigo.spring.academy
+        - https://*.vmware.com
+        - https://*.broadcom.com
+  analytics:
+    google:
+      trackingId: "${ANALYTICS_GOOGLE_ID}"
+    clarity:
+      trackingId: "${ANALYTICS_CLARITY_ID}"
     updates:
       workshop: true
-    sessions:
-      maximum: 15
+    workshop:
+      defaults:
+        expires: 60m
+        orphaned: 5m
+        reserved: ${TRAINING_PORTAL_RESERVED}
   workshops:
-    - name: spr-brasb-initializr
-      capacity: 1
-      expires: 60m
-      orphaned: 5m
-      reserved: 0
-    - name: spr-brasb-test-first
-      capacity: 1
-      expires: 60m
-      orphaned: 5m
-      reserved: 0
-    - name: spr-brasb-first-rest-endpoint
-      capacity: 1
-      expires: 60m
-      orphaned: 5m
-      reserved: 0
-    - name: spr-brasb-spring-data
-      capacity: 1
-      expires: 60m
-      orphaned: 5m
-      reserved: 0
-    - name: spr-brasb-create-post
-      capacity: 1
-      expires: 60m
-      orphaned: 5m
-      reserved: 0
-    - name: spr-brasb-get-list
-      capacity: 1
-      expires: 60m
-      orphaned: 5m
-      reserved: 0
-    - name: spr-brasb-simple-security
-      capacity: 1
-      expires: 90m
-      orphaned: 5m
-      reserved: 0
-    - name: spr-brasb-implementing-put
-      capacity: 1
-      expires: 60m
-      orphaned: 5m
-      reserved: 0
-    - name: spr-brasb-implementing-delete
-      capacity: 1
-      expires: 60m
-      orphaned: 5m
-      reserved: 0
+  - name: spr-brasb-initializr
+  - name: spr-brasb-test-first
+  - expires: 90m
+    name: spr-brasb-first-rest-endpoint
+  - expires: 100m
+    name: spr-brasb-spring-data
+  - expires: 90m
+    name: spr-brasb-create-post
+  - expires: 100m
+    name: spr-brasb-get-list
+  - expires: 100m
+    name: spr-brasb-simple-security
+  - expires: 120m
+    name: spr-brasb-implementing-put
+  - expires: 90m
+    name: spr-brasb-implementing-delete
