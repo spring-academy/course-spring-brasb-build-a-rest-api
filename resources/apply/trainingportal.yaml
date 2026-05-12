@@ -22,11 +22,6 @@ spec:
         - https://*.strigo.spring.academy
         - https://*.vmware.com
         - https://*.broadcom.com
-  analytics:
-    google:
-      trackingId: "${ANALYTICS_GOOGLE_ID}"
-    clarity:
-      trackingId: "${ANALYTICS_CLARITY_ID}"
     updates:
       workshop: true
     workshop:
@@ -34,6 +29,11 @@ spec:
         expires: 60m
         orphaned: 5m
         reserved: ${TRAINING_PORTAL_RESERVED}
+  analytics:
+    google:
+      trackingId: "${ANALYTICS_GOOGLE_ID}"
+    clarity:
+      trackingId: "${ANALYTICS_CLARITY_ID}"
   workshops:
   - name: spr-brasb-initializr
   - name: spr-brasb-test-first
