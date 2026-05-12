@@ -46,7 +46,7 @@ spec:
     namespaces:
       budget: medium
     resources:
-      memory: 2Gi
+      memory: 3Gi
     applications:
       terminal:
         enabled: true
