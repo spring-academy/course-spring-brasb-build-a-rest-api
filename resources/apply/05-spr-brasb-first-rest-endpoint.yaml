@@ -20,7 +20,7 @@ spec:
     files:
       - http:
           # the name of the tar.gz here should make the workshop name
-          url: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)/spring-maisey.tar.gz"
+          url: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)/spr-brasb-initializr.tar.gz"
         includePaths:
           - /workshops/05-first-rest-endpoint/workshop/**
           - /workshops/05-first-rest-endpoint/exercises/**
