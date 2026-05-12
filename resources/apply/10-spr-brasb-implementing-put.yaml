@@ -20,11 +20,6 @@ spec:
       - http:
           # the name of the tar.gz here should make the workshop name
           url: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)/spr-brasb-initializr.tar.gz"
-        includePaths:
-          - /workshops/10-implementing-put/workshop/**
-          - /workshops/10-implementing-put/exercises/**
-          - /workshops/10-implementing-put/README.md
-        newRootPath: workshops/10-implementing-put
       - path: .local/share/code-server
         image:
           url: ghcr.io/spring-academy/vscode-java-tools-$(platform_arch)-files:0.25.14
