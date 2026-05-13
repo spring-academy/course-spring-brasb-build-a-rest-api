@@ -1,0 +1,111 @@
+apiVersion: training.educates.dev/v1beta1
+kind: Workshop
+metadata:
+  name: spr-brasb-test-first
+spec:
+  title: Creating your Data Contract by using Test-First Practices
+  description: |
+    You'll enforce your data contract for a single Cash Card by writing a test before writing any production code.
+  workshop:
+    image: jdk17-environment:*
+    packages:
+      - name: spring-academy-lab
+        files:
+          - image:
+              url:
+                ghcr.io/spring-academy/spring-academy-extension-packages/spring-academy-lab
+              tagSelection:
+                semver:
+                  constraints: ">=1.0.0 <2.0.0"
+    files:
+      - http:
+          # the name of the tar.gz here should make the workshop name
+          url: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)/spr-brasb-test-first.tar.gz"
+      - path: .local/share/code-server
+        image:
+          url: ghcr.io/spring-academy/vscode-java-tools-$(platform_arch)-files:0.25.14
+      - path: exercises
+        git:
+          url: https://github.com/spring-academy/course-spring-brasb-build-a-rest-api-code
+          ref: main
+        newRootPath: .
+  request:
+    parameters:
+    - name: USER_DOMAIN
+      value: "unknown.domain"
+    - name: USER_EMAIL
+      value: "somebody@unknown.domain"
+  session:
+    env:
+      - name: LESSON_LABEL
+        value: test-first-start
+    namespaces:
+      budget: medium
+    resources:
+      memory: 3Gi
+    applications:
+      terminal:
+        enabled: true
+        layout: default
+      editor:
+        enabled: true
+    dashboards:
+      - name: Editor
+      - name: Terminal
+  environment:
+    objects:
+    - apiVersion: v1
+      kind: Service
+      metadata:
+        name: $(workshop_namespace)-files
+        namespace: $(workshop_namespace)
+      spec:
+        type: ClusterIP
+        ports:
+        - port: 80
+          protocol: TCP
+          targetPort: 8080
+        selector:
+          deployment: files
+    - apiVersion: networking.k8s.io/v1
+      kind: Ingress
+      metadata:
+        name: $(workshop_namespace)-files
+        namespace: $(workshop_namespace)
+      spec:
+        tls:
+        - hosts:
+            - $(workshop_namespace)-files.$(ingress_domain)
+          secretName: $(ingress_secret)
+        rules:
+        - host: $(workshop_namespace)-files.$(ingress_domain)
+          http:
+            paths:
+            - backend:
+                service:
+                  name: $(workshop_namespace)-files
+                  port:
+                    number: 80
+              pathType: Prefix
+              path: /
+    - apiVersion: apps/v1
+      kind: Deployment
+      metadata:
+        name: $(workshop_namespace)-files
+        namespace: $(workshop_namespace)
+      spec:
+        serviceAccountName: $(service_account)
+        replicas: 1
+        selector:
+          matchLabels:
+            deployment: files
+        strategy:
+          type: Recreate
+        template:
+          metadata:
+            labels:
+              deployment: files
+          spec:
+            containers:
+            - name: files
+              image: ${CONTAINER_REGISTRY}${CONTAINER_REPOSITORY}:${VERSION}

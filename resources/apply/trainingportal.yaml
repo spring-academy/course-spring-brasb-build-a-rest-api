@@ -1,0 +1,51 @@
+apiVersion: training.educates.dev/v1beta1
+kind: TrainingPortal
+metadata:
+  name: spring-brasb
+spec:
+  portal:
+    sessions:
+      anonymous: 2
+      maximum: 180
+    theme:
+      frame:
+        ancestors:
+        - https://spring.academy
+        - https://*.spring.academy
+        - https://*.vmware.com
+        - https://*.broadcom.com
+        - https://spring-staging.academy
+        - https://spring-academy.broadcom.com
+        - https://spring-academy-verify.broadcom.com
+        - https://spring-academy-qa.broadcom.net
+        - https://spring-academy-dev.broadcom.net
+        - http://localhost:8080
+    updates:
+      workshop: true
+    workshop:
+      defaults:
+        expires: 60m
+        orphaned: 5m
+        reserved: ${TRAINING_PORTAL_RESERVED}
+  analytics:
+    google:
+      trackingId: "${ANALYTICS_GOOGLE_ID}"
+    clarity:
+      trackingId: "${ANALYTICS_CLARITY_ID}"
+  workshops:
+  - name: spr-brasb-initializr
+  - name: spr-brasb-test-first
+  - expires: 90m
+    name: spr-brasb-first-rest-endpoint
+  - expires: 100m
+    name: spr-brasb-spring-data
+  - expires: 90m
+    name: spr-brasb-create-post
+  - expires: 100m
+    name: spr-brasb-get-list
+  - expires: 100m
+    name: spr-brasb-simple-security
+  - expires: 120m
+    name: spr-brasb-implementing-put
+  - expires: 90m
+    name: spr-brasb-implementing-delete
