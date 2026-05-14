@@ -18,8 +18,7 @@ spec:
                   constraints: ">=1.0.0 <2.0.0"
     files:
       - http:
-          # the name of the tar.gz here should make the workshop name
-          url: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)/spr-brasb-spring-data.tar.gz"
+          url: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)/$(workshop_name).tar.gz"
       - path: .local/share/code-server
         image:
           url: ghcr.io/spring-academy/vscode-java-tools-$(platform_arch)-files:0.25.14
