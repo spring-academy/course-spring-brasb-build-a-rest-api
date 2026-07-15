@@ -12,7 +12,7 @@ We can add support for Spring Security by adding the appropriate dependency.
 
    ```groovy
    dependencies {
-       implementation 'org.springframework.boot:spring-boot-starter-web'
+       implementation 'org.springframework.boot:spring-boot-starter-webmvc'
 
        // Add the following dependency
        implementation 'org.springframework.boot:spring-boot-starter-security'
