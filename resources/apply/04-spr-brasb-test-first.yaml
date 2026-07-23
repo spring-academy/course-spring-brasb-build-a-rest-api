@@ -23,11 +23,6 @@ spec:
       - path: .local/share/code-server
         image:
           url: ghcr.io/spring-academy/vscode-java-tools-$(platform_arch)-files:0.25.14
-      - path: exercises
-        git:
-          url: https://github.com/spring-academy/course-spring-brasb-build-a-rest-api-code
-          ref: spring-boot-4
-        newRootPath: .
   request:
     parameters:
     - name: USER_DOMAIN
@@ -51,8 +46,27 @@ spec:
     dashboards:
       - name: Editor
       - name: Terminal
+    volumes:
+    - name: workshop-setup-scripts
+      secret:
+        secretName: workshop-setup-scripts
+        defaultMode: 0755
+    volumeMounts:
+    - name: workshop-setup-scripts
+      mountPath: /opt/packages/workshop-setup-scripts/setup.d
+
   environment:
     objects:
+    - apiVersion: v1
+      kind: Secret
+      metadata:
+        name: workshop-setup-scripts
+      stringData:
+        00-setup.sh: |
+          #!/bin/bash
+          # This is run at session creation
+          curl -L ${WEBSERVER}/exercises.tar.gz | tar -xvz -C ${HOME}
+
     - apiVersion: v1
       kind: Service
       metadata:
