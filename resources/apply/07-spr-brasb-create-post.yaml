@@ -28,12 +28,12 @@ spec:
       value: "unknown.domain"
     - name: USER_EMAIL
       value: "somebody@unknown.domain"
-    - name: WEBSERVER
-      value: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)"
   session:
     env:
       - name: LESSON_LABEL
         value: create-post-start
+      - name: WEBSERVER
+        value: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)"
     namespaces:
       budget: medium
     resources:
