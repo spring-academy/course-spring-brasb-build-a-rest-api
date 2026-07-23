@@ -21,7 +21,7 @@ add-files-to-archive:
 	done
 
 	git clone -b ${CODE_REPO_BRANCH} ${CODE_REPO} build/exercises
-	tar -czvf build/exercises.tar.gz build/exercises
+	tar -czvf build/exercises.tar.gz -C build exercises
 	rm -rf build/exercises
 
 build-date:
