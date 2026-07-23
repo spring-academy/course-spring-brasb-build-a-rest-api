@@ -28,6 +28,8 @@ spec:
       value: "unknown.domain"
     - name: USER_EMAIL
       value: "somebody@unknown.domain"
+    - name: WEBSERVER
+      value: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)"
   session:
     namespaces:
       budget: medium
