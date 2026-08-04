@@ -12,11 +12,11 @@ This project was originally created using the [Spring Initializr](https://start.
 
    ```groovy
    dependencies {
-      implementation 'org.springframework.boot:spring-boot-starter-web'
-      testImplementation 'org.springframework.boot:spring-boot-starter-test'
+      implementation 'org.springframework.boot:spring-boot-starter-webmvc'
+      testImplementation 'org.springframework.boot:spring-boot-starter-webmvc-test'
 
       // Add the two dependencies below
-      implementation 'org.springframework.data:spring-data-jdbc'
+      implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
       implementation 'com.h2database:h2'
    }
    ```
@@ -26,7 +26,7 @@ This project was originally created using the [Spring Initializr](https://start.
    The two dependencies we added are related, but different.
 
    - ```groovy
-     implementation 'org.springframework.data:spring-data-jdbc'
+     implementation 'org.springframework.boot:spring-boot-starter-data-jdbc'
      ```
 
      Spring Data has many implementations for a variety of relational and non-relational database technologies. Spring Data also has several abstractions on top of those technologies. These are commonly called an Object-Relational Mapping framework, or ORM.

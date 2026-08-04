@@ -29,6 +29,9 @@ spec:
     - name: USER_EMAIL
       value: "somebody@unknown.domain"
   session:
+    env:
+      - name: WEBSERVER
+        value: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)"
     namespaces:
       budget: medium
     resources:

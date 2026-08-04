@@ -8,34 +8,24 @@ spec:
     Add the GET endpoint to your Spring project and start testing your Spring data.
   workshop:
     image: jdk17-environment:*
-    packages:
-      - name: spring-academy-lab
-        files:
-          - image:
-              url:
-                ghcr.io/spring-academy/spring-academy-extension-packages/spring-academy-lab
-              tagSelection:
-                semver:
-                  constraints: ">=1.0.0 <2.0.0"
     files:
       - http:
           url: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)/$(workshop_name).tar.gz"
       - path: .local/share/code-server
         image:
           url: ghcr.io/spring-academy/vscode-java-tools-$(platform_arch)-files:0.25.14
-      - path: exercises
-        git:
-          url: https://github.com/spring-academy/course-spring-brasb-build-a-rest-api-code
-          ref: main
-        newRootPath: .
   request:
     parameters:
     - name: USER_DOMAIN
       value: "unknown.domain"
     - name: USER_EMAIL
       value: "somebody@unknown.domain"
+    - name: WEBSERVER
+      value: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)"
   session:
     env:
+      - name: WEBSERVER
+        value: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)"
       - name: LESSON_LABEL
         value: first-rest-endpoint-start
     namespaces:
@@ -51,8 +41,68 @@ spec:
     dashboards:
       - name: Editor
       - name: Terminal
+    volumes:
+    - name: workshop-setup-scripts
+      secret:
+        secretName: workshop-setup-scripts
+        defaultMode: 0755
+    volumeMounts:
+    - name: workshop-setup-scripts
+      mountPath: /opt/packages/workshop-setup-scripts/setup.d
+
   environment:
     objects:
+    - apiVersion: v1
+      kind: Secret
+      metadata:
+        name: workshop-setup-scripts
+      stringData:
+        00-setup.sh: |
+          #!/bin/bash
+          # This is run at session creation
+          set -e
+
+          curl -L ${WEBSERVER}/exercises.tar.gz | tar -xvz -C ${HOME}
+
+          # Stage the codebase
+          # This script is used to checkout the codebase to the commit that corresponds to the lesson label from the commit message.
+
+          # Note this file is meant to generalize the staging of the codebase via a provided LESSON_LABEL environment variable.
+          # there are no explicit parameters for this script to maximize the decoupling of the lesson content from the staging script.
+
+          # Env vars:
+          # LESSON_LABEL: Label to search for in commits. Must be surrounded by <> in the commit message to match
+          # LESSON_REPO_DIR: Location of the codebase repo, if not in ~/exercises
+
+          get_sha_for_lesson_label() {
+            git log --format=format:%H --grep "<$LESSON_LABEL>"
+          }
+
+          checkout_to_label() {
+            lesson_sha=$(get_sha_for_lesson_label)
+            if [[ -z "$lesson_sha" ]]; then
+              echo "LESSON_LABEL '$LESSON_LABEL' has no matching commit for this workshop."
+            else
+              echo "Checking out from git. Label (Git commit containing text): <$LESSON_LABEL>, SHA: $lesson_sha"
+              git checkout $lesson_sha
+            fi
+          }
+
+          # Make sure we are in the root of the repo
+          LESSON_REPO_DIR="${LESSON_REPO_DIR:-$HOME/exercises}"
+
+          if [[ ! -d "$LESSON_REPO_DIR" ]]; then
+            echo "No codebase at $LESSON_REPO_DIR. Exiting without error."
+            exit 0
+          fi
+
+          if [[ -z "$LESSON_LABEL" ]]; then
+            echo "No lesson label provided. Exiting without error."
+            exit 0
+          fi
+
+          cd "$LESSON_REPO_DIR"
+          checkout_to_label
     - apiVersion: v1
       kind: Service
       metadata:

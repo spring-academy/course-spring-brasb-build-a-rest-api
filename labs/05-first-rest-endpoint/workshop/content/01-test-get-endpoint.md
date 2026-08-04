@@ -17,14 +17,16 @@ Just as if we’re on a real project, let’s use test driven development to imp
    import com.jayway.jsonpath.JsonPath;
    import org.junit.jupiter.api.Test;
    import org.springframework.beans.factory.annotation.Autowired;
+   import org.springframework.boot.resttestclient.TestRestTemplate;
+   import org.springframework.boot.resttestclient.autoconfigure.AutoConfigureTestRestTemplate;
    import org.springframework.boot.test.context.SpringBootTest;
-   import org.springframework.boot.test.web.client.TestRestTemplate;
    import org.springframework.http.HttpStatus;
    import org.springframework.http.ResponseEntity;
 
    import static org.assertj.core.api.Assertions.assertThat;
 
    @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
+   @AutoConfigureTestRestTemplate
    class CashCardApplicationTests {
        @Autowired
        TestRestTemplate restTemplate;
@@ -47,6 +49,12 @@ Just as if we’re on a real project, let’s use test driven development to imp
      ```
 
      This will start our Spring Boot application and make it available for our test to perform requests to it.
+
+   - ```java
+     @AutoConfigureTestRestTemplate
+     ```
+
+     As of Spring Boot 4, `TestRestTemplate` is no longer registered automatically by `@SpringBootTest`, so we add this annotation to have one injected. Its underlying `RestTemplateBuilder` support is provided by the `spring-boot-starter-restclient` test dependency, which is already declared in this project's `build.gradle`.
 
    - ```java
      @Autowired

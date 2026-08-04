@@ -20,6 +20,10 @@ add-files-to-archive:
 	  mv $$f.resolved $$f; \
 	done
 
+	git clone -b ${CODE_REPO_BRANCH} ${CODE_REPO} build/exercises
+	tar -czvf build/exercises.tar.gz -C build exercises
+	rm -rf build/exercises
+
 build-date:
 	rm -rf build
 	# This ensures there is always a build directory with an asset to upload
