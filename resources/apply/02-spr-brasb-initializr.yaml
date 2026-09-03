@@ -7,15 +7,6 @@ spec:
   description: "Create a new project for the REST API Family Cash Card with the Spring Initializr. "
   workshop:
     image: jdk17-environment:*
-    packages:
-      - name: spring-academy-lab
-        files:
-          - image:
-              url:
-                ghcr.io/spring-academy/spring-academy-extension-packages/spring-academy-lab
-              tagSelection:
-                semver:
-                  constraints: ">=1.0.0 <2.0.0"
     files:
       - http:
           url: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)/$(workshop_name).tar.gz"
