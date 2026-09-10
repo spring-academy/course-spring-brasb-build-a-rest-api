@@ -12,7 +12,7 @@ spec:
           url: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)/$(workshop_name).tar.gz"
       - path: .local/share/code-server
         image:
-          url: ghcr.io/spring-academy/vscode-java-tools-$(platform_arch)-files:0.25.14
+          url: ghcr.io/spring-academy/vscode-java-tools-$(platform_arch)-files:0.31.1
   request:
     parameters:
     - name: USER_DOMAIN
