@@ -60,6 +60,9 @@ spec:
           # This is run at session creation
           set -e
 
+          # if the exercises directory exists, then lab has already been initialized
+          [ -d "$HOME/exercises" ] && exit 0
+
           curl -L ${WEBSERVER}/exercises.tar.gz | tar -xvz -C ${HOME}
 
           # Stage the codebase
