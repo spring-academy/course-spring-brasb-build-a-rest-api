@@ -10,7 +10,7 @@ spec:
     image: jdk17-environment:*
     files:
       - http:
-          url: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)/$(workshop_name).tar.gz"
+          url: "$(ingress_protocol)://$(assets_repository)/$(workshop_name).tar.gz"
       - path: .local/share/code-server
         image:
           url: ghcr.io/spring-academy/vscode-java-tools-$(platform_arch)-files:0.31.1
@@ -23,7 +23,7 @@ spec:
   session:
     env:
       - name: WEBSERVER
-        value: "$(ingress_protocol)://$(workshop_namespace)-files.$(ingress_domain)"
+        value: "$(ingress_protocol)://$(assets_repository)"
       - name: LESSON_LABEL
         value: test-first-start
     namespaces:
@@ -49,6 +49,14 @@ spec:
       mountPath: /opt/packages/workshop-setup-scripts/setup.d
 
   environment:
+    assets:
+      memory: 0Mi
+      ingress:
+        enabled: true
+      files:
+        - image:
+            url: ${CONTAINER_REGISTRY}${CONTAINER_REPOSITORY}:${VERSION}
+          newRootPath: usr/share/nginx/html
     objects:
     - apiVersion: v1
       kind: Secret
@@ -104,58 +112,3 @@ spec:
 
           cd "$LESSON_REPO_DIR"
           checkout_to_label
-    - apiVersion: v1
-      kind: Service
-      metadata:
-        name: $(workshop_namespace)-files
-        namespace: $(workshop_namespace)
-      spec:
-        type: ClusterIP
-        ports:
-        - port: 80
-          protocol: TCP
-          targetPort: 8080
-        selector:
-          deployment: files
-    - apiVersion: networking.k8s.io/v1
-      kind: Ingress
-      metadata:
-        name: $(workshop_namespace)-files
-        namespace: $(workshop_namespace)
-      spec:
-        tls:
-        - hosts:
-            - $(workshop_namespace)-files.$(ingress_domain)
-          secretName: $(ingress_secret)
-        rules:
-        - host: $(workshop_namespace)-files.$(ingress_domain)
-          http:
-            paths:
-            - backend:
-                service:
-                  name: $(workshop_namespace)-files
-                  port:
-                    number: 80
-              pathType: Prefix
-              path: /
-    - apiVersion: apps/v1
-      kind: Deployment
-      metadata:
-        name: $(workshop_namespace)-files
-        namespace: $(workshop_namespace)
-      spec:
-        serviceAccountName: $(service_account)
-        replicas: 1
-        selector:
-          matchLabels:
-            deployment: files
-        strategy:
-          type: Recreate
-        template:
-          metadata:
-            labels:
-              deployment: files
-          spec:
-            containers:
-            - name: files
-              image: ${CONTAINER_REGISTRY}${CONTAINER_REPOSITORY}:${VERSION}
