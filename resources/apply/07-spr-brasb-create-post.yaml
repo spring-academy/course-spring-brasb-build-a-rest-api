@@ -21,6 +21,8 @@ spec:
       value: "somebody@unknown.domain"
   session:
     env:
+      - name: LAB_VERSION
+        value: "${VERSION}"
       - name: LESSON_LABEL
         value: create-post-start
       - name: WEBSERVER
